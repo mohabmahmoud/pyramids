@@ -1,26 +1,71 @@
 @import "tailwindcss";
 
+/* 🌞 Light mode فقط */
 :root {
   --background: #ffffff;
   --foreground: #171717;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* مفيش بقى html.dark ولا switching */
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Tahoma', Geneva, Verdana, sans-serif;
+  line-height: 1.8;
+  direction: rtl;
 }
+
+/* تمربر سلس */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+/* اختيار النص */
+::selection {
+  background-color: rgba(16, 185, 129, 0.2);
+  color: #065f46;
+}
+
+/* أنيميشن النزول */
+@keyframes slide-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-slide-down {
+  animation: slide-down 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* أنيميشن تكبير بسيط */
+@keyframes scale-102 {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.02); }
+}
+
+.hover\:scale-102:hover {
+  animation: scale-102 0.3s ease forwards;
+}
+
+/* شادو لطيف لو حبيت تستخدمه */
+.glow-effect {
+  box-shadow: 0 0 40px rgba(16, 185, 129, 0.3);
+}
+
+/* نص جراديانت لو حبيت تستخدمه */
+.text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+/* مسافة للتمرير مع الهيدر */
+.scroll-mt-32 {
+  scroll-margin-top: 128px;
+}
+
