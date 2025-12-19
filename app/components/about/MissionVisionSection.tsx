@@ -6,7 +6,7 @@ export function MissionVisionSection() {
   return (
     <section className="max-w-6xl mx-auto px-4 pb-14">
       <div className="grid gap-6 lg:grid-cols-2">
-        {/* الرسالة */}
+      
         <motion.div
           initial={{ opacity: 0, y: 26 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -44,7 +44,7 @@ export function MissionVisionSection() {
           </div>
         </motion.div>
 
-        {/* الرؤية */}
+        
         <motion.div
           initial={{ opacity: 0, y: 26 }}
           whileInView={{ opacity: 1, y: 0 }}

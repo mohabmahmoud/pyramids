@@ -1,4 +1,3 @@
-// src/components/contact/ContactInfoCard.tsx
 "use client";
 
 import React from "react";
@@ -18,22 +17,19 @@ export default function ContactInfoCard() {
         </div>
 
         <div className="grid gap-4 md:grid-cols-2">
-          {/* العنوان */}
           <InfoRow
             icon={<FiMapPin />}
             title="العنوان"
             value="الخط الوسطاني الربعمائة – قرية دقيشوا – مركز كفر الدوار – البحيرة"
           />
-
-          {/* اتصل بنا */}
-          <InfoRow
+         <InfoRow
             icon={<FiPhone />}
             title="اتصل بنا"
             value="01223893042"
             href="tel:+201223893042"
           />
 
-          {/* البريد */}
+      
           <InfoRow
             icon={<FiMail />}
             title="البريد الإلكتروني"
@@ -41,7 +37,7 @@ export default function ContactInfoCard() {
             href="mailto:elfishawy_co400@yahoo.com"
           />
 
-          {/* التسجيل الضريبي */}
+       
           <InfoRow
             icon={<FiFileText />}
             title="رقم التسجيل الضريبي"

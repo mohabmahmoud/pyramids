@@ -1,4 +1,3 @@
-// ===== Values Section (About #3) =====
 import { motion } from "framer-motion";
 import {
   FiShield,
@@ -68,8 +67,6 @@ export function ValuesSection() {
           قيمنا هي الأساس الذي نبني عليه جودة منتجاتنا وعلاقتنا مع عملائنا وشركائنا.
         </p>
       </motion.div>
-
-      {/* Cards */}
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {values.map((v, idx) => (
           <motion.div

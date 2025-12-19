@@ -124,7 +124,6 @@ export default function Services() {
             </div>
           </div>
 
-          {/* Timeline Note */}
           <div className="mt-12 p-6 bg-white rounded-xl border border-green-200">
             <div className="flex items-start">
               <div className="text-2xl mr-4">⏱️</div>

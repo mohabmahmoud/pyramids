@@ -1,4 +1,3 @@
-// src/app/products/page.tsx
 "use client";
 
 import React from "react";
@@ -9,7 +8,6 @@ import VegetablesSection from "../components/products/VegetablesSection";
 export default function ProductsPage() {
   return (
     <main dir="rtl" className="min-h-screen bg-gradient-to-b from-emerald-50/70 via-white to-white">
-      {/* ===== Hero / First Section ===== */}
       <section className="pt-12 pb-10">
         <div className="max-w-6xl mx-auto px-4">
           <motion.div
@@ -25,10 +23,8 @@ export default function ProductsPage() {
               className="w-full h-full object-cover"
             />
 
-            {/* Overlay */}
             <div className="absolute inset-0 bg-gradient-to-l from-black/60 via-black/30 to-transparent" />
 
-            {/* Text فوق الصورة */}
             <div className="absolute inset-0 flex items-center">
               <div className="w-full px-6 lg:px-12">
                 <div className="max-w-2xl text-white space-y-4">
@@ -52,7 +48,6 @@ export default function ProductsPage() {
                     المميز الذي تشتهر به المحاصيل المصرية.
                   </p>
 
-                  {/* CTA optional */}
                   <div className="flex flex-wrap gap-3 pt-2">
                     <a
                       href="#products-list"
@@ -71,12 +66,10 @@ export default function ProductsPage() {
               </div>
             </div>
 
-            {/* small bottom shine */}
             <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/30 to-transparent" />
           </motion.div>
         </div>
       </section>
-      {/* ===== Section 2: رحلة التصدير (صورة + نص) ===== */}
 <section className="max-w-6xl mx-auto px-4 pb-14">
   <motion.div
     initial={{ opacity: 0, y: 40 }}
@@ -86,7 +79,7 @@ export default function ProductsPage() {
     className="bg-white rounded-[2.5rem] border border-gray-100 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden"
   >
     <div className="grid lg:grid-cols-2 gap-10 items-center p-6 lg:p-10">
-      {/* Text */}
+
       <div className="space-y-4">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-50 text-emerald-700 text-xs font-bold border border-emerald-100">
           <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
@@ -126,7 +119,7 @@ export default function ProductsPage() {
           </p>
         </div>
 
-        {/* Small highlights */}
+    
         <div className="grid sm:grid-cols-3 gap-3 pt-2">
           <div className="rounded-2xl border border-gray-100 bg-emerald-50/50 p-4">
             <p className="text-xs text-gray-500">معاييرنا</p>
@@ -143,14 +136,14 @@ export default function ProductsPage() {
         </div>
       </div>
 
-      {/* Image */}
+  
       <motion.div
         whileHover={{ scale: 1.03 }}
         transition={{ duration: 0.35 }}
         className="relative"
       >
         <div className="relative h-64 lg:h-80 rounded-[2rem] overflow-hidden shadow-lg">
-          {/* غيّر المسار حسب الصورة */}
+       
           <img
             src="/images/products/export-process.jpg"
             alt="رحلة التصدير"
@@ -159,7 +152,7 @@ export default function ProductsPage() {
           <div className="absolute inset-0 bg-gradient-to-l from-black/10 via-transparent to-transparent" />
         </div>
 
-        {/* small badge */}
+  
         <div className="absolute -bottom-4 right-4 bg-white rounded-2xl shadow-lg px-4 py-2 border border-gray-100">
           <p className="text-xs text-gray-500">تغطية أسواق متعددة</p>
           <p className="text-sm font-extrabold text-emerald-900">عربي + عالمي</p>
@@ -170,11 +163,9 @@ export default function ProductsPage() {
 </section>
 
 
-      {/* <section id="products-list" className="max-w-6xl mx-auto px-4 pb-16">
-        <FruitsSection/>
-      </section> */}
+  
         <main dir="rtl" className="min-h-screen bg-gradient-to-b from-emerald-50/70 via-white to-white">
-      {/* ... Hero + نصوص المنتجات ... */}
+    
       <FruitsSection />
       <VegetablesSection />
     </main>

@@ -90,7 +90,7 @@ export default function ContactCTA() {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
+       
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
             <h3 className="text-2xl font-bold mb-6">أرسل طلبك الآن</h3>
             
@@ -209,7 +209,6 @@ export default function ContactCTA() {
             )}
           </div>
 
-          {/* Contact Information */}
           <div>
             <h3 className="text-2xl font-bold mb-8">معلومات الاتصال</h3>
             
@@ -230,7 +229,6 @@ export default function ContactCTA() {
               ))}
             </div>
 
-            {/* FAQ Quick Links */}
             <div className="bg-white/5 rounded-xl p-6 border border-white/10">
               <h4 className="text-xl font-bold mb-4">أسئلة متكررة</h4>
               <div className="space-y-3">
@@ -248,7 +246,6 @@ export default function ContactCTA() {
               </div>
             </div>
 
-            {/* Social Media */}
             <div className="mt-8">
               <p className="mb-4">تابعنا على:</p>
               <div className="flex gap-4">

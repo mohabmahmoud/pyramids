@@ -1,4 +1,3 @@
-// src/components/SimpleFooter.tsx
 "use client";
 
 import React from "react";
@@ -38,10 +37,8 @@ export default function SimpleFooter() {
 
   return (
     <footer dir="rtl" className="mt-16 border-t border-emerald-100">
-      {/* خلفية ناعمة */}
       <div className="bg-gradient-to-b from-emerald-50/40 via-white to-white">
         <div className="max-w-6xl mx-auto px-4 lg:px-6 py-10">
-          {/* Header صغير فوق الأعمدة */}
           <div className="flex items-center justify-between gap-4 mb-8">
             <div className="flex items-center gap-3">
               <img
@@ -63,9 +60,7 @@ export default function SimpleFooter() {
             </span>
           </div>
 
-          {/* الأعمدة */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* الشركة */}
             <div className="rounded-3xl p-6 bg-white shadow-sm border border-emerald-100/70 hover:shadow-md transition-shadow">
               <h4 className="text-base font-extrabold text-emerald-950 mb-3">
                 نبذة عن الشركة
@@ -86,7 +81,6 @@ export default function SimpleFooter() {
               </div>
             </div>
 
-            {/* روابط سريعة */}
             <div className="rounded-3xl p-6 bg-white shadow-sm border border-emerald-100/70 hover:shadow-md transition-shadow">
               <h4 className="text-base font-extrabold text-emerald-950 mb-3">
                 روابط سريعة
@@ -105,7 +99,6 @@ export default function SimpleFooter() {
               </div>
             </div>
 
-            {/* تواصل معنا */}
             <div className="rounded-3xl p-6 bg-white shadow-sm border border-emerald-100/70 hover:shadow-md transition-shadow">
               <h4 className="text-base font-extrabold text-emerald-950 mb-3">
                 تواصل معنا
@@ -128,10 +121,8 @@ export default function SimpleFooter() {
             </div>
           </div>
 
-          {/* خط فاصل */}
           <div className="mt-10 pt-6 border-t border-emerald-100">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-              {/* سوشيال */}
               <div className="flex gap-3">
                 {socialLinks.map((social, index) => (
                   <a
@@ -145,13 +136,11 @@ export default function SimpleFooter() {
                 ))}
               </div>
 
-              {/* الحقوق */}
               <p className="text-sm text-gray-500 text-center">
                 © {currentYear} شركة بيراميدز. جميع الحقوق محفوظة.
               </p>
             </div>
 
-            {/* خط ديكوري تحت */}
             <div className="mt-6 h-1 w-full rounded-full bg-gradient-to-r from-transparent via-emerald-300/70 to-transparent" />
           </div>
         </div>

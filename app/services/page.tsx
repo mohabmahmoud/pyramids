@@ -1,4 +1,3 @@
-// src/app/services/page.tsx
 'use client';
 
 import React from "react";
@@ -8,7 +7,6 @@ export default function ServicesPage() {
   return (
     <main dir="rtl" className="min-h-screen bg-gradient-to-b from-emerald-50/70 via-white to-white">
 
-      {/* ===== Hero Section ===== */}
       <section className="pt-12 pb-10">
         <div className="max-w-6xl mx-auto px-4">
           <motion.div
@@ -44,7 +42,6 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* ===== Detailed Sections ===== */}
       <section className="max-w-6xl mx-auto px-4 pb-16 space-y-12">
 
         <ServiceCard
@@ -130,7 +127,6 @@ export default function ServicesPage() {
   );
 }
 
-/* ===== Service Card ===== */
 
 function ServiceCard({ title, subtitle, image, right = false, children }: any) {
   return (

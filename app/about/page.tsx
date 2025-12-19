@@ -1,4 +1,3 @@
-// src/app/about/page.tsx
 "use client";
 
 import React from "react";
@@ -10,7 +9,6 @@ import { AboutCompanySection } from "../components/about/AboutCompanySection";
 export default function AboutPage() {
   return (
     <main dir="rtl" className="min-h-screen bg-gradient-to-b from-emerald-50/70 via-white to-white">
-      {/* ===== About Hero (First Section) ===== */}
       <section className="pt-12 pb-10">
         <div className="max-w-6xl mx-auto px-4">
           <motion.div

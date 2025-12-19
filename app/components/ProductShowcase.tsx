@@ -99,7 +99,6 @@ export default function ProductShowcase() {
           ))}
         </div>
 
-        {/* Products Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {filteredProducts.map((product) => (
             <div key={product.id} className={`${product.imageColor} rounded-2xl p-6 transition-transform hover:scale-[1.02]`}>
@@ -147,7 +146,6 @@ export default function ProductShowcase() {
           ))}
         </div>
 
-        {/* Stats Section */}
         <div className="mt-20 bg-white rounded-2xl shadow-lg p-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">

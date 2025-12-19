@@ -1,4 +1,3 @@
-// src/app/contact/page.tsx
 "use client";
 
 import React from "react";
@@ -6,18 +5,14 @@ import { motion } from "framer-motion";
 import { FiMapPin, FiPhone, FiMail, FiFileText } from "react-icons/fi";
 
 export default function ContactPage() {
-  // ✅ بياناتك
   const companyName = "شركة بيراميدز لاستيراد وتصدير الحاصلات الزراعية";
   const address =
     "الخط الوسطاني الربعمائة – قرية دقيشوا – مركز كفر الدوار – البحيرة";
   const phone = "01223893042";
   const email = "elfishawy_co400@yahoo.com";
   const taxNumber = "613-640-365";
-
-  // ✅ (اختياري) حط إحداثيات المكان عشان الخريطة
-  // لو معندكش الإحداثيات دلوقتي، سيبها كده أو غيّرها لما تعرفها
-  const lat = 31.1333; // مثال تقريبي
-  const lng = 30.1333; // مثال تقريبي
+  const lat = 31.1333; 
+  const lng = 30.1333; 
 
   const mapSrc = `https://www.google.com/maps?q=${lat},${lng}&z=15&output=embed`;
 
@@ -26,7 +21,7 @@ export default function ContactPage() {
       dir="rtl"
       className="min-h-screen bg-gradient-to-b from-emerald-50/70 via-white to-white"
     >
-      {/* ===== Hero Section ===== */}
+
       <section className="pt-12 pb-10">
         <div className="max-w-6xl mx-auto px-4">
           <motion.div
@@ -36,7 +31,7 @@ export default function ContactPage() {
             className="relative h-72 lg:h-96 rounded-[2.5rem] overflow-hidden shadow-2xl"
           >
             <img
-              src="/images/contact.jpg" // ✅ غيّر الصورة
+              src="/images/contact.jpg" 
               alt="تواصل معنا"
               className="w-full h-full object-cover"
             />
@@ -82,9 +77,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* ===== Content ===== */}
       <section className="max-w-6xl mx-auto px-4 pb-16 space-y-10">
-        {/* Cards */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -93,7 +86,6 @@ export default function ContactPage() {
           className="bg-white rounded-[2.5rem] border border-gray-100 shadow-xl p-6 lg:p-10"
         >
           <div className="grid lg:grid-cols-2 gap-8 items-start">
-            {/* Info */}
             <div className="space-y-5">
               <div>
                 <h2 className="text-2xl lg:text-3xl font-extrabold text-emerald-900">
@@ -128,7 +120,6 @@ export default function ContactPage() {
               />
             </div>
 
-            {/* Quick form (اختياري) */}
             <div className="space-y-4">
               <div className="rounded-[2rem] border border-gray-100 bg-emerald-50/50 p-6">
                 <h3 className="text-lg font-extrabold text-emerald-900">
@@ -157,16 +148,12 @@ export default function ContactPage() {
                   >
                     إرسال
                   </button>
-                  <p className="text-[12px] text-gray-500">
-                    * هذا النموذج واجهة فقط — اربطه بالـ API لاحقًا إذا حبيت.
-                  </p>
+                
                 </div>
               </div>
             </div>
           </div>
         </motion.div>
-
-        {/* ===== Map Section ===== */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -198,7 +185,6 @@ export default function ContactPage() {
   );
 }
 
-/* ===== Small components ===== */
 
 function InfoRow({
   icon,

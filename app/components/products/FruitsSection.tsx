@@ -5,8 +5,8 @@ import { motion } from "framer-motion";
 
 type ProductItem = {
   name: string;
-  category: string; // "فاكهه"
-  image: string;    // path
+  category: string; 
+  image: string;    
 };
 
 const fruits: ProductItem[] = [
@@ -26,7 +26,7 @@ const fruits: ProductItem[] = [
 export default function FruitsSection() {
   return (
     <section className="max-w-6xl mx-auto px-4 pb-14">
-      {/* Header */}
+
       <div className="text-center mb-7">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-50 text-emerald-700 text-xs font-bold border border-emerald-100">
           <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
@@ -40,7 +40,7 @@ export default function FruitsSection() {
         </p>
       </div>
 
-      {/* Grid */}
+   
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {fruits.map((item, idx) => (
           <motion.article
@@ -57,7 +57,7 @@ export default function FruitsSection() {
                 alt={item.name}
                 className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
                 onError={(e) => {
-                  // fallback لو الصورة مش موجودة
+                 
                   (e.currentTarget as HTMLImageElement).src = "/images/products/placeholder.jpg";
                 }}
               />

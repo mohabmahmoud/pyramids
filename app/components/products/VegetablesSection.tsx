@@ -26,7 +26,7 @@ const vegetables: ProductItem[] = [
 export default function VegetablesSection() {
   return (
     <section className="max-w-6xl mx-auto px-4 pb-14">
-      {/* Header */}
+     
       <div className="text-center mb-7">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-50 text-emerald-700 text-xs font-bold border border-emerald-100">
           <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
@@ -40,7 +40,6 @@ export default function VegetablesSection() {
         </p>
       </div>
 
-      {/* Grid */}
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {vegetables.map((item, idx) => (
           <motion.article

@@ -65,7 +65,6 @@ export default function Testimonials() {
           </p>
         </div>
 
-        {/* Testimonials Slider */}
         <div className="relative max-w-4xl mx-auto">
           <div className="overflow-hidden">
             <div 
@@ -111,7 +110,6 @@ export default function Testimonials() {
             </div>
           </div>
 
-          {/* Navigation Buttons */}
           <button 
             onClick={prevSlide}
             className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50"
@@ -139,7 +137,6 @@ export default function Testimonials() {
           </div>
         </div>
 
-        {/* Partners Logos */}
         <div className="mt-16">
           <h3 className="text-center text-2xl font-bold mb-8 text-gray-900">
             شركاؤنا في النجاح

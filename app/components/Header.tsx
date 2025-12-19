@@ -39,7 +39,6 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 lg:px-6">
         <div className="flex items-center justify-between h-16">
 
-          {/* Logo */}
           <Link href="/" className="flex items-center gap-3">
             <img
               src="/icon.png"
@@ -52,7 +51,6 @@ export default function Header() {
             </div>
           </Link>
 
-          {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-1 bg-gray-50 px-2 py-1 rounded-2xl border">
             {navItems.map((item) => {
               const active = isActive(item.href);
@@ -75,7 +73,6 @@ export default function Header() {
             })}
           </nav>
 
-          {/* Mobile Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="lg:hidden p-2 rounded-xl border bg-white"
@@ -86,7 +83,6 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="lg:hidden bg-white border-t shadow-lg">
           <div className="px-4 py-3 space-y-2">
@@ -119,7 +115,6 @@ export default function Header() {
         </div>
       )}
 
-      {/* Decorative line */}
       <div className="h-0.5 bg-gradient-to-r from-blue-400 via-green-400 to-red-400" />
     </header>
   );
