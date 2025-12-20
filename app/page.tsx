@@ -9,9 +9,11 @@ export default function HomePage() {
   return (  
     <main dir="rtl">
       <FullScreenCarousel  slides={[
-    { id:"0",image:"/images/services.jpg",title:"تصدير الحاصلات الزراعية",subtitle:"حلول متكاملة لتصدير الحاصلات الزراعية",ctaText:"استشارة",ctaHref:"/contact" },
-    { id:"0",image:"/images/services.jpg",title:"تصدير الحاصلات الزراعية",subtitle:"حلول متكاملة لتصدير الحاصلات الزراعية",ctaText:"استشارة",ctaHref:"/contact" },
-  ]} />
+    //  { id:"0",image:"/images/headers/v-1.jpg",title:"تصدير الحاصلات الزراعية",subtitle:"حلول متكاملة لتصدير الحاصلات الزراعية",ctaText:"استشارة",ctaHref:"/contact" }, 
+    //  { id:"2",image:"/images/headers/f-1.jpg",title:"تصدير الحاصلات الزراعية",subtitle:"حلول متكاملة لتصدير الحاصلات الزراعية",ctaText:"استشارة",ctaHref:"/contact" },
+    //  { id:"2",image:"/images/headers/v-2.jpg",title:"تصدير الحاصلات الزراعية",subtitle:"حلول متكاملة لتصدير الحاصلات الزراعية",ctaText:"استشارة",ctaHref:"/contact" },
+    // 
+    ]} />
 
      
     </main>
