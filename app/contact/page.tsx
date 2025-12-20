@@ -11,8 +11,9 @@ export default function ContactPage() {
   const phone = "01223893042";
   const email = "elfishawy_co400@yahoo.com";
   const taxNumber = "613-640-365";
-  const lat = 31.1333; 
-  const lng = 30.1333; 
+  const lat = 31.206195;
+ 
+  const lng =  30.07492; 
 
   const mapSrc = `https://www.google.com/maps?q=${lat},${lng}&z=15&output=embed`;
 
