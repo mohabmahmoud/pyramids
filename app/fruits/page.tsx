@@ -33,17 +33,12 @@ export default function Page() {
   const scrollToFruits = useCallback(() => {
     const el = fruitsRef.current;
     if (!el) return;
-
-    // ✅ Delay حقيقي
     const delayMs = 150;
 
-    const headerOffset = 96; // عدّلها حسب الهيدر عندك (مثلاً 72 / 80 / 96)
-
-    setTimeout(() => {
+    const headerOffset = 96; 
+     setTimeout(() => {
       const rect = el.getBoundingClientRect();
       const targetY = window.scrollY + rect.top - headerOffset;
-
-      // ✅ Smooth أكتر من behavior:smooth
       smoothScrollToY(targetY, 1200);
     }, delayMs);
   }, []);
@@ -117,7 +112,7 @@ export default function Page() {
           </p>
 
           <p>
-            تسعى شركة الفيشاوي دائمًا لتوسيع نطاق خدماتها لأسواق جديدة، مع الحفاظ على التزامها
+            تسعى شركة بيراميدزدائمًا لتوسيع نطاق خدماتها لأسواق جديدة، مع الحفاظ على التزامها
             <strong> بالجودة العالية</strong> و<strong>التكلفة التنافسية</strong>.
           </p>
         </div>

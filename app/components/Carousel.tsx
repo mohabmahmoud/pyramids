@@ -7,31 +7,39 @@ import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 export type CarouselAction = {
   id: string;
   label: string;
-  href?: string;              // لو لينك
-  onClick?: () => void;       // لو عايز handle
+  href?: string;
+  onClick?: () => void;
   variant?: "primary" | "ghost";
   icon?: React.ReactNode;
-  newTab?: boolean;           // للروابط الخارجية
+  newTab?: boolean;
+};
+
+export type CarouselSlideVideo = {
+  src: string;
+  poster?: string;
+  loop?: boolean;
+  muted?: boolean;
 };
 
 export type CarouselSlide = {
   id: string | number;
-  image: string;
+  image?: string;
+  video?: CarouselSlideVideo;
 
-  header?: string;            // البادج الصغير فوق
+  header?: string;
   title?: string;
   subtitle?: string;
 
-  actions?: CarouselAction[]; // ✅ لكل slide أزرار/Clicks لوحده
-  content?: React.ReactNode;  // ✅ لو عايز JSX كامل بدل النصوص
-  sideCard?: React.ReactNode; // ✅ لو عايز الكارد اليمين لكل slide
+  actions?: CarouselAction[];
+  content?: React.ReactNode;
+  sideCard?: React.ReactNode;
 
-  meta?: Record<string, any>; // ✅ أي بيانات إضافية لكل slide
+  meta?: Record<string, any>;
 };
 
 type Props = {
   slides: CarouselSlide[];
-  heightClassName?: string; // "h-screen" | "h-[85vh]" ...
+  heightClassName?: string;
   autoPlay?: boolean;
   intervalMs?: number;
   overlayGradient?: boolean;
@@ -57,6 +65,9 @@ export default function FullScreenCarousel({
   const [index, setIndex] = useState(0);
   const timerRef = useRef<number | null>(null);
 
+  // ✅ refs لكل فيديو عشان نتحكم في play/pause
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
+
   const count = safeSlides.length;
   const activeSlide = safeSlides[index];
 
@@ -69,7 +80,7 @@ export default function FullScreenCarousel({
   const next = () => goTo(index + 1);
   const prev = () => goTo(index - 1);
 
-  // autoplay
+  // autoplay للـ slides (تغيير الإندكس)
   useEffect(() => {
     if (!autoPlay || count <= 1) return;
 
@@ -84,7 +95,38 @@ export default function FullScreenCarousel({
     };
   }, [autoPlay, intervalMs, count]);
 
-  // keyboard
+  // ✅ تشغيل/إيقاف الفيديوهات حسب السلايد النشط
+  useEffect(() => {
+    if (!safeSlides.length) return;
+
+    videoRefs.current.forEach((video, i) => {
+      if (!video) return;
+
+      if (i === index) {
+        // نرجع بالبداية عشان تحس إنه banner متجدد
+        try {
+          video.currentTime = 0;
+          const playPromise = video.play();
+          // في بعض المتصفحات play بيرجع promise
+          if (playPromise && typeof playPromise.then === "function") {
+            playPromise.catch(() => {
+              // نتجاهل errors بتاعة autoplay لو حصلت
+            });
+          }
+        } catch {
+          // ignore
+        }
+      } else {
+        try {
+          video.pause();
+        } catch {
+          // ignore
+        }
+      }
+    });
+  }, [index, safeSlides.length]);
+
+  // keyboard arrows
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "ArrowLeft") prev();
@@ -104,19 +146,18 @@ export default function FullScreenCarousel({
   if (!safeSlides.length) return null;
 
   const handleAction = (action: CarouselAction) => {
-    // callback عام للـ analytics مثلاً
     onActionClick?.(action, activeSlide, index);
-
-    // onClick لو موجود
     action.onClick?.();
   };
 
   return (
     <section dir="rtl" className={`relative w-full ${heightClassName} ${className}`}>
-      {/* ===== Backgrounds ===== */}
+      {/* ===== Backgrounds (image / video) ===== */}
       <div className="absolute inset-0 overflow-hidden">
         {safeSlides.map((s, i) => {
           const active = i === index;
+          const hasVideo = !!s.video?.src;
+
           return (
             <div
               key={String(s.id)}
@@ -128,15 +169,38 @@ export default function FullScreenCarousel({
               role="button"
               aria-label={`Slide ${i + 1}`}
             >
-              <img
-                src={s.image}
-                alt={s.title ?? "Slide"}
-                className={[
-                  "w-full h-full object-cover",
-                  "transition-transform duration-[1200ms] ease-out",
-                  active ? "scale-105" : "scale-100",
-                ].join(" ")}
-              />
+              {hasVideo ? (
+                <video
+                   ref={(el) => {
+    videoRefs.current[i] = el;
+  }}
+                  className={[
+                    "w-full h-full object-cover",
+                    "transition-transform duration-[1200ms] ease-out",
+                    active ? "scale-105" : "scale-100",
+                  ].join(" ")}
+                  src={s.video!.src}
+                  poster={s.video!.poster}
+                  // نخلي autoPlay دايمًا true، والـ useEffect هو اللي بيتحكم فعليًا
+                  autoPlay
+                  muted={s.video!.muted ?? true}
+                  loop={s.video!.loop ?? true}
+                  playsInline
+                  controls={false}
+                />
+              ) : (
+                s.image && (
+                  <img
+                    src={s.image}
+                    alt={s.title ?? "Slide"}
+                    className={[
+                      "w-full h-full object-cover",
+                      "transition-transform duration-[1200ms] ease-out",
+                      active ? "scale-105" : "scale-100",
+                    ].join(" ")}
+                  />
+                )
+              )}
 
               {overlayGradient && (
                 <div className="absolute inset-0 bg-gradient-to-l from-black/55 via-black/25 to-transparent" />
@@ -151,6 +215,7 @@ export default function FullScreenCarousel({
         <div className="absolute inset-0 flex items-center pt-60">
           <div className="max-w-screen-2xl mx-auto px-4 lg:px-10 w-full">
             <div className="grid items-center gap-6 lg:grid-cols-[1.1fr,0.9fr]">
+              {/* النصوص */}
               <div className="max-w-2xl">
                 {activeSlide?.header && (
                   <div
@@ -180,12 +245,10 @@ export default function FullScreenCarousel({
                   </p>
                 )}
 
-                {/* لو عندك JSX خاص بالسلايد */}
                 {activeSlide?.content && (
                   <div className="mt-4 text-white/90">{activeSlide.content}</div>
                 )}
 
-                {/* Actions per slide ✅ */}
                 {!!activeSlide?.actions?.length && (
                   <div className="mt-6 flex flex-wrap gap-3">
                     {activeSlide.actions.map((a) => {
@@ -204,7 +267,6 @@ export default function FullScreenCarousel({
                             "hover:bg-white/20 transition",
                           ].join(" ");
 
-                      // لينك
                       if (a.href) {
                         const external = a.newTab || a.href.startsWith("http");
                         if (external) {
@@ -258,6 +320,10 @@ export default function FullScreenCarousel({
                 )}
               </div>
 
+              {
+                heightClassName==='h-screen' && (
+                  
+                
               <div className="hidden lg:block justify-self-end">
                 {activeSlide?.sideCard ?? (
                   <div
@@ -268,7 +334,9 @@ export default function FullScreenCarousel({
                       "shadow-[0_20px_60px_rgba(0,0,0,0.35)]",
                     ].join(" ")}
                   >
-                    <p className="text-white/90 text-sm font-semibold mb-2">لماذا بيراميدز؟</p>
+                    <p className="text-white/90 text-sm font-semibold mb-2">
+                      لماذا بيراميدز؟
+                    </p>
                     <ul className="space-y-3 text-white/85 text-sm">
                       <li className="flex items-start gap-2">
                         <span className="mt-1 w-2 h-2 rounded-full bg-emerald-300" />
@@ -296,8 +364,13 @@ export default function FullScreenCarousel({
                     </div>
                   </div>
                 )}
-              </div>
+              </div>)
+}
+
             </div>
+
+{ slides.length > 1 && (
+  
 
             <div className="mt-10 flex items-center justify-between">
               <div className="flex items-center gap-2">
@@ -351,7 +424,9 @@ export default function FullScreenCarousel({
                   <FiChevronLeft className="mx-auto text-xl" />
                 </button>
               </div>
-            </div>
+            </div>)
+}
+
           </div>
         </div>
 

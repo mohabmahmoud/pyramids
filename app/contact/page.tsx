@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FiMapPin, FiPhone, FiMail, FiFileText } from "react-icons/fi";
+import FullScreenCarousel from "../components/Carousel";
 
 export default function ContactPage() {
   const companyName = "شركة بيراميدز لاستيراد وتصدير الحاصلات الزراعية";
@@ -23,62 +24,22 @@ export default function ContactPage() {
       className="min-h-screen bg-gradient-to-b from-emerald-50/70 via-white to-white"
     >
 
-      <section className="pt-12 pb-10">
-        <div className="max-w-6xl mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="relative h-72 lg:h-96 rounded-[2.5rem] overflow-hidden shadow-2xl"
-          >
-            <img
-              src="/images/contact.jpg" 
-              alt="تواصل معنا"
-              className="w-full h-full object-cover"
-            />
+<FullScreenCarousel
+        heightClassName="h-[75vh]"
+        slides={[
+          {
+            id: "0",
+            image: "/images/headers/contact.jpg",
+            header: "تواصل معنا",
+            title: " تواصل معنا لبدء لبدء شركتك المُثمرة",
+            subtitle: "  جاهزون للرد على استفساراتك وتقديم الدعم في كل خطوة من التصدير والتوريد",
+            
+          },
+        ]}
+      />
+   
 
-            <div className="absolute inset-0 bg-gradient-to-l from-black/55 via-black/30 to-transparent" />
-
-            <div className="absolute inset-y-0 right-0 flex items-center px-8 lg:px-12">
-              <div className="max-w-xl text-white space-y-4">
-                <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/15 text-xs font-semibold">
-                  <span className="w-2 h-2 rounded-full bg-emerald-300 animate-pulse" />
-                  تواصل معنا
-                </span>
-
-                <h1 className="text-3xl lg:text-4xl font-extrabold leading-snug">
-                  تواصل معنا لبدء
-                  <span className="text-emerald-200"> شركتك المُثمرة</span>
-                </h1>
-
-                <p className="text-sm lg:text-base text-emerald-50/90 leading-relaxed">
-                  {companyName} — جاهزون للرد على استفساراتك وتقديم الدعم في كل
-                  خطوة من التصدير والتوريد.
-                </p>
-
-                <div className="flex flex-wrap gap-3 pt-2">
-                  <a
-                    href={`tel:+20${phone.replace(/^0/, "")}`}
-                    className="inline-flex items-center gap-2 rounded-2xl bg-emerald-500/90 hover:bg-emerald-500 text-white px-5 py-2.5 text-sm font-semibold shadow-lg transition"
-                  >
-                    <FiPhone />
-                    اتصل الآن
-                  </a>
-                  <a
-                    href={`mailto:${email}`}
-                    className="inline-flex items-center gap-2 rounded-2xl bg-white/15 hover:bg-white/20 text-white px-5 py-2.5 text-sm font-semibold border border-white/20 transition"
-                  >
-                    <FiMail />
-                    راسلنا
-                  </a>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      <section className="max-w-6xl mx-auto px-4 pb-16 space-y-10">
+      <section className="max-w-6xl mx-auto px-4 pb-16 space-y-10 pt-8">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}

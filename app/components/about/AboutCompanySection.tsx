@@ -53,7 +53,7 @@ export function AboutCompanySection() {
             </h2>
 
             <p className="text-sm lg:text-base text-gray-700 leading-relaxed">
-              شركة الفيشاوي للاستيراد والتصدير للحاصلات الزراعية تعد واحدة من أبرز الشركات المتخصصة في
+              شركة بيراميدزللاستيراد والتصدير للحاصلات الزراعية تعد واحدة من أبرز الشركات المتخصصة في
               تصدير الخضروات والفاكهة المصرية إلى الأسواق العربية والدولية. تمتد خبرتنا لأكثر من{" "}
               <span className="font-bold text-emerald-800">17 عامًا</span> منذ تأسيسنا في{" "}
               <span className="font-bold text-emerald-800">عام 2007</span>، حيث نعمل على توفير منتجات

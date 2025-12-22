@@ -16,10 +16,10 @@ export default function ProductsPage() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="relative h-72 lg:h-96 rounded-[2.5rem] overflow-hidden shadow-2xl"
           >
-            {/* غيّر الصورة حسب اللي عندك */}
+           
             <img
               src="/images/products/cover.jpg"
-              alt="منتجات الفيشاوي لتصدير الحاصلات الزراعية"
+              alt="منتجات بيراميدزلتصدير الحاصلات الزراعية"
               className="w-full h-full object-cover"
             />
 
@@ -38,7 +38,7 @@ export default function ProductsPage() {
                   </h1>
 
                   <p className="text-base lg:text-lg text-emerald-50/95 leading-relaxed">
-                    <span className="font-bold">الفيشاوي لتصدير الحاصلات الزراعية</span> — نقدم مجموعة
+                    <span className="font-bold">بيراميدزلتصدير الحاصلات الزراعية</span> — نقدم مجموعة
                     متنوعة من الحاصلات تشمل الخضروات مثل <strong>الطماطم، الخيار، البطاطس، والبصل</strong>،
                     بالإضافة إلى الفاكهة مثل <strong>البرتقال، المانجو، الفراولة، والعنب</strong>.
                   </p>
@@ -114,7 +114,7 @@ export default function ProductsPage() {
           </p>
 
           <p>
-            تسعى شركة الفيشاوي دائمًا لتوسيع نطاق خدماتها لأسواق جديدة، مع الحفاظ على التزامها
+            تسعى شركة بيراميدزدائمًا لتوسيع نطاق خدماتها لأسواق جديدة، مع الحفاظ على التزامها
             <strong> بالجودة العالية</strong> و<strong>التكلفة التنافسية</strong>.
           </p>
         </div>

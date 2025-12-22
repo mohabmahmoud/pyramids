@@ -53,7 +53,8 @@ export default function Header() {
     () => [
       { name: 'الرئيسية', href: '/', icon: <FiHome />, color: 'text-blue-600' },
       { name: 'من نحن', href: '/about', icon: <FiUsers />, color: 'text-emerald-600' },
-      { name: 'منتجاتنا', href: '/products', icon: <FiPackage />, color: 'text-blue-600' },
+      { name: 'فواكهنا', href: '/fruits', icon: <FiPackage />, color: 'text-blue-600' },
+      { name: 'خضرواتنا', href: '/vegetables', icon: <FiPackage />, color: 'text-red-600' },
       { name: 'خدماتنا', href: '/services', icon: <FiSettings />, color: 'text-emerald-600' },
       { name: 'تواصل معنا', href: '/contact', icon: <FiPhone />, color: 'text-red-600' },
     ],

@@ -2,47 +2,34 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import FullScreenCarousel from "../components/Carousel";
 
 export default function ServicesPage() {
   return (
     <main dir="rtl" className="min-h-screen bg-gradient-to-b from-emerald-50/70 via-white to-white">
 
-      <section className="pt-12 pb-10">
-        <div className="max-w-6xl mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="relative h-72 lg:h-96 rounded-[2.5rem] overflow-hidden shadow-2xl"
-          >
-            <img
-              src="/images/services.jpg"
-              alt="تصدير الحاصلات الزراعية"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-l from-black/55 via-black/30 to-transparent" />
+      <FullScreenCarousel
+                heightClassName="h-[75vh]"
+                slides={[
+                 
+                  {
+          id: 2,
+          video: {
+            src: "/our-services.mp4",
+            loop: true,
+            muted: true,
+          },
+          header: "خدماتنا",
+          title: "من المزرعة إلى العالم بجودة عالمية",
+          subtitle: "إدارة كاملة لسلسلة التوريد من الحصاد حتى وصول الشحنة.",
+        
+                  },
+                   
+              
+                ]}
+              />
 
-            <div className="absolute inset-y-0 right-0 flex items-center px-8 lg:px-12">
-              <div className="max-w-xl text-white space-y-4">
-                <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/15 text-xs font-semibold">
-                  <span className="w-2 h-2 rounded-full bg-emerald-300 animate-pulse" />
-                  خدماتنا
-                </span>
-                <h1 className="text-3xl lg:text-4xl font-extrabold leading-snug">
-                  حلول متكاملة لتصدير
-                  <span className="text-emerald-200"> الحاصلات الزراعية</span>
-                </h1>
-                <p className="text-sm lg:text-base text-emerald-50/90 leading-relaxed">
-                  من اختيار المحصول وفرزه وتعبئته، إلى النقل المبرد والاستشارات المتخصصة، نرافقك في كل خطوة
-                  لضمان وصول منتجاتك إلى الأسواق العالمية بأعلى مستويات الجودة.
-                </p>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      <section className="max-w-6xl mx-auto px-4 pb-16 space-y-12">
+      <section className="max-w-6xl mx-auto px-4 pb-16 space-y-12 pt-8">
 
         <ServiceCard
           title="تصدير المنتجات الزراعية"
