@@ -54,7 +54,7 @@ export default function FullScreenCarousel({
   slides,
   heightClassName = "h-screen",
   autoPlay = true,
-  intervalMs = 5500,
+  intervalMs = 7000,
   overlayGradient = true,
   className = "",
   onSlideChange,

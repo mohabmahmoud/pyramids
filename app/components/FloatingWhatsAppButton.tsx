@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { BsWhatsapp } from "react-icons/bs";
 
-const WHATSAPP_NUMBER = "201234567890"; // ← عدّل رقم الواتساب هنا بصيغة دولية بدون +
+const WHATSAPP_NUMBER = "201200275444"; // ← عدّل رقم الواتساب هنا بصيغة دولية بدون +
 
 const FloatingWhatsAppButton: React.FC = () => {
   const pathname = usePathname();

@@ -11,6 +11,10 @@ export default function HomePage() {
     <main dir="rtl">
     <FullScreenCarousel
           slides={[
+
+
+
+
              {
             id: 1,
             image: "/images/headers/f-1.jpg",
@@ -26,10 +30,31 @@ export default function HomePage() {
               },
             ],
           },
+
+
+            {
+            id: 1,
+            video: {
+              src: "/fruits.mp4",
+              loop: true,
+              muted: true,
+            },
+            header: "فاكهة",
+            title: "تنوّع يرضي جميع الأذواق",
+            subtitle: " نقدم فواكه طازجة وفق أعلى معايير الجودة للحفاظ على الطزاجة والطعم المميز للمحاصيل المصرية.",
+            actions: [
+              {
+                id: "fruits",
+                label: "استعرض الفاكهة",
+                variant: "primary",
+                href: "/fruits",
+              },
+            ],
+          },
             {
     id: 2,
     video: {
-      src: "/our-services.mp4",
+      src: "/vegetables.mp4",
       loop: true,
       muted: true,
     },
@@ -37,12 +62,13 @@ export default function HomePage() {
     title: "من المزرعة إلى العالم بجودة عالمية",
     subtitle: "إدارة كاملة لسلسلة التوريد من الحصاد حتى وصول الشحنة.",
     actions: [
-      {
-        id:"contact",
-        label: "خدماتنا",
-        href: "/services",
-        variant: "primary",
-      },
+              {
+                id: "fruits",
+                label: "استعرض الفاكهة",
+                variant: "primary",
+                href: "/fruits",
+              },
+            
     ],
             },
              

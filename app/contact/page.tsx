@@ -9,11 +9,11 @@ export default function ContactPage() {
   const companyName = "شركة بيراميدز لاستيراد وتصدير الحاصلات الزراعية";
   const address =
     "الخط الوسطاني الربعمائة – قرية دقيشوا – مركز كفر الدوار – البحيرة";
-  const phone = "01223893042";
-  const email = "elfishawy_co400@yahoo.com";
+  const phone = "+201200275444";
+  const email = "parmidsforimportandexport@gmail.com";
   const taxNumber = "613-640-365";
   const lat = 31.206195;
- 
+
   const lng =  30.07492; 
 
   const mapSrc = `https://www.google.com/maps?q=${lat},${lng}&z=15&output=embed`;
@@ -75,11 +75,11 @@ export default function ContactPage() {
                 value={email}
                 href={`mailto:${email}`}
               />
-              <InfoRow
+              {/* <InfoRow
                 icon={<FiFileText />}
                 title="رقم التسجيل الضريبي"
                 value={taxNumber}
-              />
+              /> */}
             </div>
 
             <div className="space-y-4">

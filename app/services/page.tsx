@@ -14,11 +14,7 @@ export default function ServicesPage() {
                  
                   {
           id: 2,
-          video: {
-            src: "/our-services.mp4",
-            loop: true,
-            muted: true,
-          },
+          image: "/images/headers/services.jpg",
           header: "خدماتنا",
           title: "من المزرعة إلى العالم بجودة عالمية",
           subtitle: "إدارة كاملة لسلسلة التوريد من الحصاد حتى وصول الشحنة.",

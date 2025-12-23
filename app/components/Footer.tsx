@@ -12,6 +12,7 @@ import {
   FiLinkedin,
   FiArrowUpRight,
 } from "react-icons/fi";
+import { u } from "framer-motion/client";
 
 export default function SimpleFooter() {
   const currentYear = new Date().getFullYear();
@@ -28,9 +29,9 @@ export default function SimpleFooter() {
   ];
 
   const contactInfo = [
-    { icon: <FiPhone />, text: "+20 100 123 4567", href: "tel:+201001234567" },
-    { icon: <FiMail />, text: "info@pyramids.com", href: "mailto:info@pyramids.com" },
-    { icon: <FiMapPin />, text: "القاهرة، مصر", href: "#" },
+    { icon: <FiPhone />, text: "+201200275444", href: "tel:+201200275444" },
+    { icon: <FiMail />, text: "pyramidsforimportandexport@gmail.com", href: "mailto:pyramidsforimportandexport@gmail.com" },
+    { icon: <FiMapPin />, text: "الخط الوسطاني الربعمائة – قرية دقيشوا – مركز كفر الدوار – البحيرة", href: "#" },
   ];
 
   const socialLinks = [
@@ -173,6 +174,7 @@ export default function SimpleFooter() {
                         className="flex items-center gap-3 text-sm text-gray-800/85 hover:text-emerald-950 transition-colors"
                       >
                         <span
+                     
                           className="
                             w-10 h-10 rounded-2xl flex items-center justify-center
                             border border-white/50 bg-white/14 backdrop-blur-2xl
@@ -182,7 +184,10 @@ export default function SimpleFooter() {
                         >
                           {info.icon}
                         </span>
-                        <span className="font-semibold">{info.text}</span>
+                        
+                         
+                        <span dir={ (i!=2)?"ltr":undefined} className="font-semibold">{info.text}</span>
+
                       </a>
                     ))}
                   </div>

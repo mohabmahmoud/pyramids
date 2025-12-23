@@ -90,7 +90,7 @@ export default function Header() {
                 src="/icon.png"
                 alt="Pyramids Logo"
                 className={[
-                  'w-11 h-11 rounded-xl bg-white object-contain',
+                  'w-12 h-12 rounded-xl bg-white object-contain',
                   'transition-all duration-500',
                   scrolled || isMenuOpen ? 'shadow' : 'shadow-black/30 shadow-lg',
                 ].join(' ')}
