@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+const { i18n } = require('./next-i18next.config');
 
 const repo = "pyramids";
 const isProd = process.env.NODE_ENV === "production";

@@ -12,7 +12,8 @@ body {
   color: var(--foreground);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Tahoma', Geneva, Verdana, sans-serif;
   line-height: 1.8;
-  direction: rtl;
+  direction: var(--direction);
+
 }
 
 html {
@@ -67,3 +68,18 @@ html {
   scroll-margin-top: 128px;
 }
 
+
+/* globals.css */
+body {
+  /* This line is fine and will work */
+}
+
+/* Target the page when it's in RTL mode */
+[dir="rtl"] body {
+  text-align: right;
+}
+
+/* Target the page when it's in LTR mode */
+[dir="ltr"] body {
+  text-align: left;
+}

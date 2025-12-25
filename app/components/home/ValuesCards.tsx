@@ -28,12 +28,7 @@ const values: ValueItem[] = [
     description:
       "تقديم منتجات طازجة وصحية متوافقة مع المعايير الدولية",
   },
-  {
-    icon: <ShieldCheck className="h-7 w-7" />,
-    title: "المسؤولية الاجتماعية",
-    description:
-      "دعم المجتمعات المحلية من خلال تمكين المزارعين وتعزيز فرص العمل في القطاع الزراعي",
-  },
+  
   {
     icon: <Sparkles className="h-7 w-7" />,
     title: "الابتكار",
@@ -55,7 +50,9 @@ const ValuesCards: React.FC = () => {
               rounded-2xl border border-gray-200
               bg-gray-50
               p-6
+              mx-2
               shadow-sm
+              py-25
               transition-all duration-300 ease-out
               hover:-translate-y-2
               hover:border-emerald-500
@@ -63,7 +60,7 @@ const ValuesCards: React.FC = () => {
               hover:shadow-lg
             "
           >
-            {/* Icon in white circle */}
+
             <div className="mb-4 flex items-center justify-center">
               <div
                 className="

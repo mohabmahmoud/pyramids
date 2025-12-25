@@ -1,4 +1,3 @@
-// src/components/SimpleFooter.tsx
 "use client";
 
 import React from "react";
@@ -12,13 +11,9 @@ import {
   FiLinkedin,
   FiArrowUpRight,
 } from "react-icons/fi";
-import { u } from "framer-motion/client";
 
 export default function SimpleFooter() {
   const currentYear = new Date().getFullYear();
-
-  // ✅ غيّر مسار الصورة هنا
-  const FOOTER_BG = "/images/footer-2.webp";
 
   const navItems = [
     { name: "الرئيسية", href: "/" },
@@ -40,192 +35,172 @@ export default function SimpleFooter() {
     { icon: <FiLinkedin />, href: "#", label: "لينكدإن" },
   ];
 
-  // ✅ Glass tokens
-  const glassCard =
-    "relative rounded-3xl p-6 border border-white/45 bg-white/12 backdrop-blur-2xl " +
-    "shadow-[0_18px_60px_rgba(0,0,0,0.14)] " +
-    "hover:shadow-[0_28px_90px_rgba(0,0,0,0.18)] transition-all";
-
-  const shine =
-    "pointer-events-none absolute inset-0 rounded-3xl " +
-    "bg-gradient-to-l from-white/18 via-white/8 to-transparent opacity-70";
-
-  const softRing =
-    "pointer-events-none absolute inset-0 rounded-3xl ring-1 ring-white/25";
-
   return (
-    <footer dir="rtl" className="mt-16">
-      {/* top hairline */}
-      <div className="h-px w-full bg-gradient-to-r from-transparent via-emerald-200/70 to-transparent" />
+    <footer dir="rtl" className="mt-16 bg-gradient-to-b from-white to-slate-50">
+      {/* الخط العلوي */}
+      <div className="h-px w-full bg-gradient-to-r from-transparent via-emerald-400 to-transparent" />
 
-      <div className="relative overflow-hidden">
-        {/* ✅ Background image */}
-        <div
-          className="absolute inset-0 bg-center bg-cover"
-          style={{ backgroundImage: `url(${FOOTER_BG})`}}
-        />
+      <div className="relative">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 py-8 sm:py-10 lg:py-12">
+          {/* الهيدر */}
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-6 mb-8 sm:mb-10">
+            <div className="flex items-center gap-3 sm:gap-4">
+              <div className="relative flex-shrink-0">
+                <div className="absolute inset-0 rounded-2xl opacity-30" />
+                <img
+                  src="/icon.png"
+                  alt="Pyramids Logo"
+                  className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 object-contain"
+                />
+              </div>
+              
+              <div>
+                <h2 className="text-lg sm:text-xl lg:text-2xl font-extrabold text-slate-900">
+                  شركة بيراميدز
+                </h2>
+                <p className="text-xs sm:text-sm text-emerald-700 font-medium">
+                  لتصدير الحاصلات الزراعية
+                </p>
+              </div>
+            </div>
 
-        {/* ✅ very soft tint فوق الصورة (رمادي/أبيض خفيف جدًا) */}
-        <div className="absolute inset-0 bg-white/80" />
-        {/* لو عايزه رمادي أكتر: bg-slate-50/90 أو bg-gray-50/90 */}
-
-        {/* ✅ optional: vignette لطيف */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-white/30" />
-
-        {/* ✅ content */}
-        <div className="relative">
-          {/* base gradient فوق الخلفية */}
-          <div className="bg-gradient-to-b from-transparent via-white/20 to-white/55">
-            <div className="max-w-6xl mx-auto px-4 lg:px-6 py-12">
-              {/* header row */}
-              <div className="flex items-center justify-between gap-4 mb-8">
-                <div className="flex items-center gap-3">
-                  <div className="relative">
-                    <div className="absolute inset-0 rounded-2xl bg-white/25 blur-md" />
-                    <img
-                      src="/icon.png"
-                      alt="Logo"
-                      className="relative w-12 h-12 rounded-2xl object-contain bg-white/55 ring-1 ring-white/45 shadow-sm backdrop-blur"
-                    />
-                  </div>
-
-                  <div>
-                    <h3 className="text-lg lg:text-xl font-extrabold text-emerald-950">
-                      شركة بيراميدز
-                    </h3>
-                    <p className="text-xs text-gray-700/80">
-                      لتصدير الحاصلات الزراعية
-                    </p>
-                  </div>
-                </div>
-
-                <span
-                  className="
-                    hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full
-                    border border-white/45 bg-white/12 backdrop-blur-2xl
-                    shadow-[0_14px_45px_rgba(0,0,0,0.12)]
-                    text-xs font-semibold text-emerald-900/90
-                  "
-                >
-                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+            <div className="flex flex-col items-center lg:items-end text-center lg:text-right">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-gradient-to-r from-emerald-50 to-emerald-100 border border-emerald-200 shadow-sm">
+                <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-emerald-500 animate-pulse" />
+                <span className="text-xs sm:text-sm font-semibold text-emerald-800">
                   جودة • سرعة • التزام
                 </span>
               </div>
+              <p className="mt-1.5 sm:mt-2 text-xs sm:text-sm text-slate-600">
+                شريكك الموثوق في تصدير المنتجات الزراعية المصرية
+              </p>
+            </div>
+          </div>
 
-              {/* cards */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {/* about */}
-                <div className={glassCard}>
-                  <div className={shine} />
-                  <div className={softRing} />
-                  <h4 className="relative text-base font-extrabold text-emerald-950 mb-3">
-                    نبذة عن الشركة
-                  </h4>
-                  <p className="relative text-sm text-gray-800/80 leading-relaxed">
-                    شركة متخصصة في تصدير الخضروات والفواكه الطازجة من المزارع
-                    المصرية إلى الأسواق العالمية بأعلى معايير الجودة والالتزام.
-                  </p>
+          {/* البطاقات */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-10">
+            {/* بطاقة نبذة عن الشركة */}
+            <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+              <div className="flex items-center gap-2 mb-3 sm:mb-4">
+                <div className="w-1.5 h-4 sm:w-2 sm:h-6 rounded-full bg-gradient-to-b from-emerald-500 to-emerald-400" />
+                <h3 className="text-base sm:text-lg font-bold text-slate-900">
+                  نبذة عن الشركة
+                </h3>
+              </div>
+              
+              <p className="text-sm text-slate-700 mb-3 sm:mb-4 leading-relaxed text-justify">
+                شركة متخصصة في تصدير الخضروات والفواكه الطازجة من المزارع
+                المصرية إلى الأسواق العالمية بأعلى معايير الجودة والالتزام.
+              </p>
 
-                  <div className="relative mt-4">
-                    <Link
-                      href="/about"
-                      className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-900/90 hover:text-emerald-950 transition-colors"
-                    >
-                      اعرف المزيد
-                      <FiArrowUpRight />
-                    </Link>
-                  </div>
-                </div>
+              <Link
+                href="/about"
+                className="inline-flex items-center gap-1 text-emerald-700 hover:text-emerald-800 font-medium group text-sm sm:text-base"
+              >
+                <span>اعرف المزيد</span>
+                <FiArrowUpRight className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+              </Link>
+            </div>
 
-                {/* links */}
-                <div className={glassCard}>
-                  <div className={shine} />
-                  <div className={softRing} />
-                  <h4 className="relative text-base font-extrabold text-emerald-950 mb-3">
-                    روابط سريعة
-                  </h4>
-
-                  <div className="relative grid grid-cols-2 gap-2">
-                    {navItems.map((item) => (
-                      <Link
-                        key={item.name}
-                        href={item.href}
-                        className="text-sm text-gray-800/80 hover:text-emerald-950 transition-colors"
-                      >
-                        {item.name}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-
-                {/* contact */}
-                <div className={glassCard}>
-                  <div className={shine} />
-                  <div className={softRing} />
-                  <h4 className="relative text-base font-extrabold text-emerald-950 mb-3">
-                    تواصل معنا
-                  </h4>
-
-                  <div className="relative space-y-3">
-                    {contactInfo.map((info, i) => (
-                      <a
-                        key={i}
-                        href={info.href}
-                        className="flex items-center gap-3 text-sm text-gray-800/85 hover:text-emerald-950 transition-colors"
-                      >
-                        <span
-                     
-                          className="
-                            w-10 h-10 rounded-2xl flex items-center justify-center
-                            border border-white/50 bg-white/14 backdrop-blur-2xl
-                            shadow-[0_10px_30px_rgba(0,0,0,0.10)]
-                            text-emerald-900/90
-                          "
-                        >
-                          {info.icon}
-                        </span>
-                        
-                         
-                        <span dir={ (i!=2)?"ltr":undefined} className="font-semibold">{info.text}</span>
-
-                      </a>
-                    ))}
-                  </div>
-                </div>
+            {/* بطاقة الروابط السريعة */}
+            <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+              <div className="flex items-center gap-2 mb-3 sm:mb-4">
+                <div className="w-1.5 h-4 sm:w-2 sm:h-6 rounded-full bg-gradient-to-b from-emerald-500 to-emerald-400" />
+                <h3 className="text-base sm:text-lg font-bold text-slate-900">
+                  روابط سريعة
+                </h3>
               </div>
 
-              {/* bottom */}
-              <div className="mt-10 pt-6">
-                <div className="h-px w-full bg-gradient-to-r from-transparent via-white/60 to-transparent" />
-
-                <div className="mt-6 flex flex-col md:flex-row justify-between items-center gap-4">
-                  <div className="flex gap-3">
-                    {socialLinks.map((s, i) => (
-                      <a
-                        key={i}
-                        href={s.href}
-                        aria-label={s.label}
-                        className="
-                          w-11 h-11 rounded-2xl flex items-center justify-center
-                          border border-white/45 bg-white/12 backdrop-blur-2xl
-                          shadow-[0_16px_50px_rgba(0,0,0,0.14)]
-                          text-gray-800/80 hover:text-emerald-950
-                          hover:-translate-y-0.5 transition-all
-                        "
-                      >
-                        {s.icon}
-                      </a>
-                    ))}
-                  </div>
-
-                  <p className="text-sm text-gray-800/70 text-center">
-                    © {currentYear} شركة بيراميدز. جميع الحقوق محفوظة.
-                  </p>
-                </div>
-
-                <div className="mt-6 h-1 w-full rounded-full bg-gradient-to-r from-transparent via-emerald-300/70 to-transparent" />
+              <div className="grid grid-cols-2 sm:grid-cols-2 gap-2 sm:gap-3">
+                {navItems.map((item) => (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className="text-sm text-slate-700 hover:text-emerald-700 hover:bg-emerald-50 p-2 rounded-lg transition-colors text-center sm:text-right"
+                  >
+                    {item.name}
+                  </Link>
+                ))}
               </div>
             </div>
+
+            {/* بطاقة تواصل معنا - مصححة */}
+            <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+              <div className="flex items-center gap-2 mb-3 sm:mb-4">
+                <div className="w-1.5 h-4 sm:w-2 sm:h-6 rounded-full bg-gradient-to-b from-emerald-500 to-emerald-400" />
+                <h3 className="text-base sm:text-lg font-bold text-slate-900">
+                  تواصل معنا
+                </h3>
+              </div>
+
+              <div className="space-y-3 sm:space-y-4">
+                {contactInfo.map((info, i) => (
+                  <a
+                    key={i}
+                    href={info.href}
+                    className="flex items-start gap-3 text-slate-700 hover:text-emerald-700 transition-colors group"
+                  >
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl flex items-center justify-center bg-emerald-50 text-emerald-600 group-hover:bg-emerald-100 transition-colors flex-shrink-0 mt-0.5">
+                      {info.icon}
+                    </div>
+                    
+                    <span 
+                      dir={i !== 2 ? "ltr" : undefined}
+                      className={`text-xs sm:text-sm font-medium flex-1 ${
+                        i === 1 ? 'break-all' : 'break-words'
+                      } ${i === 2 ? 'rtl:text-right ltr:text-left' : 'ltr:text-left'}`}
+                    >
+                      {info.text}
+                    </span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* القسم السفلي */}
+          <div className="pt-6 sm:pt-8 border-t border-slate-200">
+            <div className="flex flex-col lg:flex-row justify-between items-center gap-4 sm:gap-6">
+              {/* روابط التواصل الاجتماعي */}
+              <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4">
+                <span className="text-xs sm:text-sm font-medium text-slate-700 hidden xs:block">
+                  تابعنا على:
+                </span>
+                <div className="flex gap-1.5 sm:gap-2">
+                  {socialLinks.map((s, i) => (
+                    <a
+                      key={i}
+                      href={s.href}
+                      aria-label={s.label}
+                      className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-lg sm:rounded-xl flex items-center justify-center bg-slate-100 text-slate-700 hover:bg-emerald-100 hover:text-emerald-700 transition-colors"
+                    >
+                      {s.icon}
+                    </a>
+                  ))}
+                </div>
+              </div>
+
+              {/* حقوق النشر */}
+              <div className="text-center order-first lg:order-none">
+                <p className="text-xs sm:text-sm text-slate-600">
+                  © {currentYear} شركة بيراميدز. جميع الحقوق محفوظة.
+                </p>
+                <p className="text-xs text-slate-500 mt-0.5">
+                  مصمم بعناية لخدمتكم
+                </p>
+              </div>
+
+              {/* معلومات إضافية */}
+              <div className="text-center lg:text-right">
+                <p className="text-xs sm:text-sm text-slate-600">
+                  السبت - الخميس: ٩ صباحاً - ٥ مساءً
+                </p>
+                <p className="text-xs text-slate-500 mt-0.5">نحن هنا لخدمتكم</p>
+              </div>
+            </div>
+
+            {/* الخط السفلي */}
+            <div className="mt-6 sm:mt-8 h-0.5 sm:h-1 w-full rounded-full bg-gradient-to-r from-transparent via-emerald-300 to-transparent" />
           </div>
         </div>
       </div>
